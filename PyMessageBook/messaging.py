@@ -7,7 +7,7 @@ class User():
         Instance attributes: user name, email, phone
     '''
 
-    fileName = './data.json'
+    fileName = '../data.json'
         
     
     def __init__(self, name=None, email=None):
@@ -22,30 +22,37 @@ class User():
         return str(self.getName()) + ' ' + str(self.getEmail())
 
     def getName(self):
+        ''' Return the name of the user'''
         if self.__name:
             return self.__name
         else:
             return None
 
     def getEmail(self):
+        ''' Return email '''
         if self.__email:
             return self.__email
         else:
             return None
 
     def setName(self, name):
+        ''' Set Name attribute '''
         self.__name = name
 
     def setEmail(self, email):
+        ''' Set Email attribute '''
         self.__email = email
 
     def save(self):
+        ''' Save the data to the disk '''
         userDict = {self.getName(): self.getEmail()}
         return mutils.save(userDict, User.fileName)
 
 class Message():
 
-    fileName = './messages.json'
+    ''' Message class: represnts a message. '''
+    fileName = '../messages.json'
+
     def __init__(self, sender, content):
         if mutils.search(sender):
             self.__sender = sender

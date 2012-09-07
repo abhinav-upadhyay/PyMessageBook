@@ -1,10 +1,10 @@
 import json
 
-FILENAME = './data.json'
+CONTACTS_FILENAME = '../data.json'
 
 def search(name):
     try:
-        f = open(FILENAME, 'r')
+        f = open(CONTACTS_FILENAME, 'r')
     except IOError:
         return None
 
@@ -12,11 +12,15 @@ def search(name):
     f.close()
     return user_dict.get(name)
 
-def listContacts():
+def getContacts():
     try:
-        f = open(FILENAME, 'r')
+        f = open(CONTACTS_FILENAME, 'r')
     except IOError:
         return None
+    contacts_dict = json.load(f)
+    f.close()
+    return contacts_dict
+
 
 def save(d, fileName):
     try:
