@@ -21,6 +21,14 @@ def getContacts():
     f.close()
     return contacts_dict
 
+def getNames():
+    try:
+        f = open(CONTACTS_FILENAME, 'r')
+    except IOError:
+        return None
+    contacts_dict = json.load(f)
+    f.close()
+    return contacts_dict.keys()
 
 def save(d, fileName):
     try:
