@@ -1,0 +1,7 @@
+A 'hello world' kind of a Python projec which I created to explain the basic
+constructs of Python like classes, modules, functions, dictionary, lists etc.
+for an internal tutorial session at my workplace (delivered by me).
+
+PyMessageBook is a simple message book kind of an app. It can store
+contact list of a user and the messages from those contacts. It persists
+information on the disk using JSON.
